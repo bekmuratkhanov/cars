@@ -3,84 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cars</title>
-</head>
-<style>
-    body{
-        margin: 0;
-        font-family: Arial,sans-serif;
-        background: #f4f4f4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .container{
-        display:flex;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px;
-    }
-    .card{
-        width: 250px;
-        height: 420px;
-        color: white;
-        padding: 40px 25px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .card h2{
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
-    .card p {
-        font-size: 15px;
-        line-height: 1.5;
-    }
-    .card button{
-        background: #f4f4f4;
-        color: inherit;
-        border: none;
-        border-radius: 25px;
-        padding: 12px 0;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    .card button:hover{
-        background: transparent;
-        border: 2px solid white;   
-        color: white;
+    <title>Extensions</title>
+    <style>
+       
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        .sedan{
-            background-color: orange;
-        }
-        .suv{
-            background-color: skyblue;
-        }
-        .luxury{
-            background-color: #043;
-        }
-</style>
-<body>
-<div class="container">
-    <div class="card sedan">
-        <h2>SEDAN</h2>
-        <p>Choose a sedan for its affordability and excelent fuel economy.Ideal for cruising in the city or on your next road trip</p>
-        <button>Learn about</button>
-  </div>
 
-    <div class="card suv">
-        <h2>SUVS</h2>
-        <p>Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures</p>
-      <button>Learn about</button>
-  </div>
-  <div class="container">
-    <div class="card luxury">
-        <h2>LUXURY</h2>
-        <p>Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental  and arrive in style.</p>
-        <button>Learn about</button>
-  </div>
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+           
+            background: #301934; 
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .main-white-container {
+         
+            background-color: #F8F8F8; 
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            width: 90%;
+            max-width: 1200px;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            position: relative; 
+            z-index: 1; 
+            color: #333;
+         
+        }
+
+        .background-image-slot {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; 
+            border-radius: 15px; 
+            overflow: hidden; 
+        }
+
+        .background-image-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            padding: 40px 60px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            width: 100%;
+            padding-bottom: 80px;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1;
+            
+            color: #333; 
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        .content-grid {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            justify-content: center;
+        }
+
+       
+
+        .illustration-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .illustration-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            object-fit: contain;
+            display: block;
+        }
+
+        .text-section {
+            padding: 20px 0;
+        }
+
+        .text-section h1 {
+            font-size: 3.2em;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .text-section p {
+            font-size: 1.15em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .register-button {
+            display: inline-block;
+            background-color: #6a11cb;
+            color: #fff;
+            padding: 15px 60px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .register-button:hover {
+            background-color: #550fad;
+        }
+
+        .footer-social {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            padding-top: 40px;
+        }
+
+        .social-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #6a11cb;
+            border-radius: 50%;
+            color: #6a11cb;
+            text-decoration: none;
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .social-icon:hover {
+            border-color: #ff52c1;
+            color: #ff52c1;
+        }
+
+        @media (max-width: 1024px) {
+            .main-white-container {
+                width: 95%;
+                min-height: auto;
+            }
+            .content-wrapper {
+                padding: 30px 20px;
+            }
+            .header {
+                padding-bottom: 40px;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+            .illustration-section {
+                order: -1;
+                min-height: 200px;
+                padding: 10px;
+            }
+            .text-section h1 {
+                font-size: 2.2em;
+                margin-bottom: 15px;
+            }
+            .text-section p {
+                font-size: 1em;
+                margin-bottom: 20px;
+            }
+            .register-button {
+                padding: 12px 40px;
+                font-size: 1em;
+            }
+            .footer-social {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main-white-container">
+        <div class="background-image-slot">
+            <img src="bg-desktop.svg" alt="Фоновая картина" />
+        </div>
+        
+        <div class="content-wrapper">
+            <header class="header">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-comments"></i>
+                    Huddle
+                </a>
+            </header>
+
+            <main class="content-grid">
+                <section class="illustration-section">
+                    <img src="illustration-mockups.svg" alt="Мое фото" />
+                </section>
+
+                <section class="text-section">
+                    <h1>Build The Community Your Fans Will Love</h1>
+                    <p>
+                        Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion.
+                    </p>
+                    <a href="#" class="register-button">Register</a>
+                </section>
+            </main>
+
+          
+        </div>
+    </div>
 </body>
 </html>
